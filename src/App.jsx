@@ -115,7 +115,7 @@ function App() {
     loadData();
   }, []);
 
-  if (loading) return <p className="loading">Loading Excel data...</p>;
+  if (loading) return <p className="loading">Loading data... Please Wait!</p>;
   if (error) return <p className="error">{error}</p>;
 
   const sheetNames = Object.keys(sheetsData).filter(name => name !== "DESCRIPTIVE PLAYER POINTS");
