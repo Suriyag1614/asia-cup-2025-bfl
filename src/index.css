@@ -1,0 +1,167 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #f0f7f7, #e0f2f1);
+  margin: 0;
+  padding: 0;
+}
+
+.app-container {
+  padding: 25px;
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+.title {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #1e3d59;
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.12);
+  margin-bottom: 25px;
+}
+
+/* Tabs */
+.tabs {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.tab-button {
+  padding: 10px 25px;
+  border-radius: 30px;
+  border: none;
+  background: linear-gradient(135deg, #74b9ff, #a29bfe);
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.tab-button.active {
+  background: linear-gradient(135deg, #00cec9, #0984e3);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.25);
+}
+
+/* Table */
+.table-wrapper {
+  border-radius: 10px;
+  overflow-x: auto;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+  background: #ffffff;
+  margin-top: 15px;
+}
+
+/* force scroll without stretching */
+.table-scroll {
+  overflow-x: auto;
+  width: 100%;
+  text-align: left;
+}
+
+/* Table should only be as wide as needed */
+.styled-table {
+  display: inline-table;  /* key fix */
+  width: 100%;
+  table-layout: auto;
+  border-collapse: collapse;
+}
+
+.styled-table thead tr th {
+  cursor: pointer;
+  text-align: center;
+  padding: 14px 15px;
+  font-weight: 700;
+  background-color: #0984e3;
+  color: #fff;
+  white-space: nowrap;  /* keep header in one line */
+}
+
+.styled-table tbody td {
+  text-align: center;
+  padding: 14px 12px;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+  white-space: nowrap;  /* keep row values in one line */
+}
+
+
+.styled-table tbody tr.even { background-color: #dfe6e9; }
+.styled-table tbody tr.odd { background-color: #b2bec3; }
+.styled-table tbody tr:hover {
+  background-color: #ffeaa7;
+  transform: scale(1.02);
+  transition: all 0.3s ease;
+}
+
+.styled-table thead tr { position: sticky; top: 0; z-index: 2; }
+
+.loading, .no-data, .error {
+  text-align: center;
+  font-size: 1.5rem;
+  padding: 20px;
+}
+.error { color: red; }
+
+.last-updated {
+  text-align: center;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #2d3436;
+  background: #ffeaa7;
+  display: block;         /* 👈 make it block element */
+  width: fit-content;     /* 👈 shrink to content width */
+  margin: 1px auto 50px auto;  /* 👈 auto centers it */
+  padding: 6px 14px;
+  border-radius: 20px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+  animation: fadePulse 2s infinite;
+}
+
+/* Subtle glowing animation */
+@keyframes fadePulse {
+  0% { opacity: 0.8; }
+  50% { opacity: 1; }
+  100% { opacity: 0.8; }
+}
+
+/* Footer sticks to the bottom naturally */
+.footer {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  color: #2d3436;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.15);
+  margin-top: 25px;    /* spacing above footer */
+  width: fit-content;
+}
+
+/* Logo inside footer */
+.footer-logo {
+  width: 75px;
+  height: auto;
+}
+
+.footer-text {
+  line-height: 1.2;
+  font: bold 0.8rem 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+html, body, #root, .app-container {
+  height: 100%;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+}
+
+footer {
+  margin-top: auto;  /* pushes footer to bottom */
+}

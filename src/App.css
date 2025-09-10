@@ -1,0 +1,123 @@
+/* Global styles */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(to right, #f2f2f2, #e6f0ff);
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+
+.app-container {
+  padding: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.title {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #004080;
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.2);
+  margin-bottom: 30px;
+}
+
+/* Tabs */
+.tabs {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.tab-button {
+  padding: 10px 20px;
+  border-radius: 25px;
+  border: none;
+  background: #e6f0ff;
+  color: #004080;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+}
+
+.tab-button:hover {
+  transform: translateY(-3px);
+  background: #cce0ff;
+}
+
+.tab-button.active {
+  background: #004080;
+  color: #fff;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+/* Table wrapper */
+.table-wrapper {
+  overflow-x: auto;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+/* Table styles */
+.styled-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 800px;
+}
+
+.styled-table thead tr {
+  background-color: #004080;
+  color: #ffffff;
+  text-align: left;
+  font-size: 1.1rem;
+}
+
+.styled-table th,
+.styled-table td {
+  padding: 12px 15px;
+  transition: all 0.3s ease;
+}
+
+.styled-table tbody tr.even {
+  background-color: #f2f9ff;
+}
+
+.styled-table tbody tr.odd {
+  background-color: #ffffff;
+}
+
+.styled-table tbody tr:hover {
+  background-color: #cce0ff;
+  transform: scale(1.02);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(20px);}
+  100% { opacity: 1; transform: translateY(0);}
+}
+
+/* Loading and error */
+.loading {
+  text-align: center;
+  font-size: 1.5rem;
+  color: #004080;
+}
+
+.error {
+  text-align: center;
+  font-size: 1.2rem;
+  color: red;
+}
+
+.no-data {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #555;
+  padding: 20px;
+}
