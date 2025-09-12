@@ -115,7 +115,7 @@ function App() {
     loadData();
   }, []);
 
-  if (loading) return <p className="loading">Loading data... Please Wait!</p>;
+  if (loading) return <p className="loading">Loading Data... Please Wait!</p>;
   if (error) return <p className="error">{error}</p>;
 
   const sheetNames = Object.keys(sheetsData).filter(name => name !== "DESCRIPTIVE PLAYER POINTS");
@@ -124,7 +124,7 @@ function App() {
   return (
     <div className="app-container">
       <h1 className="title">ASIA CUP 2025 - BFL DASHBOARD</h1>
-      <p className="last-updated">⭐ LAST UPDATED – MATCH NO. 2</p>
+      <p className="last-updated">⭐ LAST UPDATED – MATCH NO. 3</p>
       <div className="tabs">
   {sheetNames.map(name => {
     const tabEmoji = tabEmojiMap[name] ? `${tabEmojiMap[name]} ` : ""; // 👈 check this line
