@@ -74,7 +74,7 @@ body {
   text-align: center;
   padding: 14px 15px;
   font-weight: 700;
-  background-color: #0984e3;
+  background-color: #1c3079;
   color: #fff;
   white-space: nowrap;  /* keep header in one line */
 }
@@ -92,7 +92,7 @@ body {
 .styled-table tbody tr.odd { background-color: #b2bec3; }
 .styled-table tbody tr:hover {
   background-color: #ffeaa7;
-  transform: scale(1.02);
+  transform: scale(1.01);
   transition: all 0.3s ease;
 }
 
@@ -117,7 +117,7 @@ body {
   padding: 6px 14px;
   border-radius: 20px;
   box-shadow: 0 3px 8px rgba(0,0,0,0.15);
-  animation: fadePulse 2s infinite;
+  animation: fadePulse 1.5s infinite;
 }
 
 /* Subtle glowing animation */
