@@ -58,6 +58,9 @@ body {
 .table-scroll {
   overflow-x: auto;
   width: 100%;
+  min-width: 600px;  /* prevent shrinking too much */
+  max-width: 100%;
+  overflow: auto;
   text-align: left;
 }
 
@@ -65,6 +68,11 @@ body {
 .styled-table {
   display: inline-table;  /* key fix */
   width: 100%;
+  min-width: 600px;      /* prevent shrinking too much */
+  max-width: 100%;
+  margin: 0 auto;
+  font-size: 1rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
   table-layout: auto;
   border-collapse: collapse;
 }

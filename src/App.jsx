@@ -5,13 +5,14 @@ import './index.css';
 const tabEmojiMap = {
   "LEADERBOARD": "🏆",
   "PLAYERS DATA": "👤",
+  "NEWS": "🗞️",
   "TEAM PICK AND PREDICTIONS": "📋",
   "TARGET PREDICTIONS": "🎯",
   "WINNING TEAM PREDICTIONS": "🎲",
   "MATCH-WISE PERFORMANCE": "📊",
   "POINTS SYSTEM": "⚡",
   "DESCRIPTIVE PLAYER POINTS": "📝",
-  "SELECTED PLAYER STATS": "⚔️",
+  "SELECTED PLAYER STATS": "⚔️"
 };
 
 const headerEmojiMap = {
@@ -30,7 +31,7 @@ const headerEmojiMap = {
   "CAPTAIN": "🧢",
   "VICE-CAPTAIN": "🎩",
   "TOTAL CREDITS": "💰",
-  
+  "HEADLINES": "📰"
 };
 
 const SheetStructure = ({ data, activeSheetKey }) => {
@@ -124,7 +125,7 @@ function App() {
   return (
     <div className="app-container">
       <h1 className="title">ASIA CUP 2025 - BFL DASHBOARD</h1>
-      <p className="last-updated">📌 LAST UPDATED – MATCH NO. 3</p>
+      <p className="last-updated">📌 LAST UPDATED – MATCH NO. 8</p>
       <div className="tabs">
   {sheetNames.map(name => {
     const tabEmoji = tabEmojiMap[name] ? `${tabEmojiMap[name]} ` : ""; // 👈 check this line
