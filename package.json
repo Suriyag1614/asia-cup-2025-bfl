@@ -12,7 +12,9 @@
     "chart.js": "^4.3.0",
     "lucide-react": "^0.543.0",
     "react": "^18.2.0",
+    "react-canvas-confetti": "^2.0.7",
     "react-chartjs-2": "^5.2.0",
+    "react-confetti": "^6.4.0",
     "react-dom": "^18.2.0",
     "xlsx": "^0.18.5"
   },

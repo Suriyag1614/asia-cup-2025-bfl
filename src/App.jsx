@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { fetchAllSheets } from './dataHandler';
 import './index.css';
+import WinnerAnnouncement from "./WinnerAnnouncement";
 
 const tabEmojiMap = {
   "LEADERBOARD": "🏆",
@@ -124,8 +125,9 @@ function App() {
 
   return (
     <div className="app-container">
+      <WinnerAnnouncement winner="SURIYA" runnerUp="SANTO" />
       <h1 className="title">ASIA CUP 2025 - BFL DASHBOARD</h1>
-      <p className="last-updated">📌 LAST UPDATED – MATCH NO. 18</p>
+      <p className="last-updated">📌 LAST UPDATED – FINAL MATCH</p>
       <div className="tabs">
   {sheetNames.map(name => {
     const tabEmoji = tabEmojiMap[name] ? `${tabEmojiMap[name]} ` : ""; // 👈 check this line
