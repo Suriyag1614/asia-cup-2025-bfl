@@ -1,61 +1,65 @@
 import React, { useEffect, useState } from "react";
+import { motion } from "framer-motion";
 import Confetti from "react-confetti";
-import ReactCanvasConfetti from "react-canvas-confetti";
 import "./WinnerAnnouncement.css";
 
 function WinnerAnnouncement({ winner, runnerUp }) {
   const [show, setShow] = useState(true);
 
-  // Fireworks instance
-  const [fireInstance, setFireInstance] = useState(null);
-
-  const makeShot = (angle, originX) => {
-    fireInstance &&
-      fireInstance({
-        particleCount: 80,
-        angle,
-        spread: 55,
-        origin: { x: originX, y: 0.7 },
-      });
-  };
-
   useEffect(() => {
-    const interval = setInterval(() => {
-      makeShot(60, 0); // left fireworks
-      makeShot(120, 1); // right fireworks
-    }, 700);
-
     const timer = setTimeout(() => {
       setShow(false);
-      clearInterval(interval);
-    }, 6000); // animation lasts 6s
+    }, 10000); // auto-hide after 10s
 
     return () => {
-      clearInterval(interval);
       clearTimeout(timer);
     };
-  }, [fireInstance]);
+  }, []);
 
   if (!show) return null;
 
   return (
-    <div className="announcement-overlay">
-      <Confetti recycle={true} numberOfPieces={300} />
-      <ReactCanvasConfetti refConfetti={setFireInstance} style={{
-        position: "fixed",
-        pointerEvents: "none",
-        width: "100%",
-        height: "100%",
-        top: 0,
-        left: 0,
-      }} />
+    <div className="announcement-overlay" onClick={() => setShow(false)}>
+      {/* 🎊 Confetti */}
+      <Confetti
+        recycle={true}
+        numberOfPieces={window.innerWidth < 768 ? 120 : 400}
+      />
 
-      <div className="announcement-card">
+      {/* Popup Card */}
+      <motion.div
+        className="announcement-card"
+        initial={{ scale: 0, opacity: 0 }}
+        animate={{ scale: 1, opacity: 1 }}
+        transition={{ type: "spring", stiffness: 120, damping: 12 }}
+      >
         <h2 className="title">🏆 Contest Results 🏆</h2>
-        <div className="winner">🥇 Winner: <span>{winner}</span></div>
-        <div className="runner">🥈 Runner-Up: <span>{runnerUp}</span></div>
-        <p className="celebrate">🎊 Congratulations 🎊</p>
-      </div>
+        <motion.div
+          className="winner"
+          initial={{ y: -50, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ delay: 0.5 }}
+        >
+          🥇 Winner: <span className="highlight">{winner} 🏆</span>
+        </motion.div>
+        <motion.div
+          className="runner"
+          initial={{ y: 50, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ delay: 1 }}
+        >
+          🥈 Runner-Up: <span className="highlight">{runnerUp} 🎖️</span>
+        </motion.div>
+        <motion.p
+          className="celebrate"
+          initial={{ scale: 0.8 }}
+          animate={{ scale: [1, 1.2, 1] }}
+          transition={{ duration: 1.2, repeat: Infinity }}
+        >
+          🎊 Congratulations 🎊
+        </motion.p>
+        <p className="hint">(Tap/Click anywhere to dismiss)</p>
+      </motion.div>
     </div>
   );
 }
